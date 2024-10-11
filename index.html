@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="menu-principal" class="tela">
+    <h1>Jogo da Memória</h1>
+    <button onclick="selecionarDificuldade('solo')">Jogar Sozinho</button>
+    <button onclick="selecionarDificuldade('dupla')">Jogar em Dupla</button>
+    <button onclick="mostrarHistorico()">Ver Histórico</button>
+  </div>
+  
+  <div id="menu-dificuldade" class="tela oculto">
+    <h2>Selecione a Dificuldade</h2>
+    <button onclick="iniciarJogo('facil')">Fácil (4x4)</button>
+    <button onclick="iniciarJogo('medio')">Médio (6x6)</button>
+    <button onclick="iniciarJogo('dificil')">Difícil (8x8)</button>
+  </div>
+
+  <div id="jogo" class="tela oculto">
+    <h2 id="modo"></h2>
+    <div id="info">
+      <p id="temporizador">Tempo: 0s</p>
+      <p id="erros">Erros: 0</p>
+      <p id="pontuacao-jogador1">Jogador 1: 0 pontos</p>
+      <p id="pontuacao-jogador2" class="oculto">Jogador 2: 0 pontos</p>
+    </div>
+    <div id="tabuleiro"></div>
+    <button onclick="voltarMenu()">Voltar ao Menu</button>
+  </div>
+
+  <div id="historico" class="tela oculto">
+    <h2>Histórico de Partidas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Tempo</th>
+          <th>Dificuldade</th>
+          <th>Erros</th>
+          <th>Pontuação Jogador 1</th>
+          <th>Pontuação Jogador 2</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-historico"></tbody>
+    </table>
+    <button onclick="voltarMenu()">Voltar ao Menu</button>
+  </div>
+
+  <div id="mensagem-vitoria" class="tela oculto">
+    <h2>Parabéns! Você Venceu!</h2>
+    <p id="mensagem-tempo"></p>
+    <p id="mensagem-erros"></p>
+    <p id="mensagem-pontuacao"></p>
+    <button onclick="voltarMenu()">Voltar ao Menu</button>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
